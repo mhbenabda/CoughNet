@@ -1,0 +1,55 @@
+---
+# CHW configuration for memenet
+
+arch: memenet
+dataset: memes
+
+# Define layer parameters in order of the layer sequence
+layers:
+  - pad: 1  # conv1
+    activate: ReLU
+    out_offset: 0x2000
+    processors: 0x0000.0000.0000.0007  # This means I have 3 input channels
+    data_format: HWC
+    op: conv2d
+  - pad: 1  # conv2
+    max_pool: 2
+    pool_stride: 2
+    activate: ReLU
+    out_offset: 0
+    processors: 0x0000.000f.ffff.fff0  # 32 proc
+    op: conv2d
+  - pad: 1 # conv3
+    activate: ReLU
+    out_offset: 0x2000
+    processors: 0x0fff.fff0.0000.0000 # 24 processors
+    op: conv2d
+  - pad: 1 # conv4
+    max_pool: 2
+    pool_stride: 2
+    activate: ReLU
+    out_offset: 0
+    processors: 0x0000.0000.0000.ffff # 16 processors
+    op: conv2d
+  - pad: 1 # conv5
+    activate: ReLU
+    out_offset: 0x2000
+    processors: 0x0000.0000.00ff.0000 # 8 processors
+    op: conv2d
+  - pad: 1 # conv6
+    max_pool: 2
+    pool_stride: 2
+    activate: ReLU
+    out_offset: 0
+    processors: 0x0000.0000.0000.003f # 6 processors
+    op: conv2d
+
+  #########################
+  # TODO: Add more layers #
+  #########################
+
+  - op: mlp # fcx
+    flatten: true
+    out_offset: 0x2000
+    output_width: 32   # model is trained with wide = True, we can get 32 bit output
+    processors: 0x0000.0000.0000.0f00  #0xffff.ffff.ffff.ffff
