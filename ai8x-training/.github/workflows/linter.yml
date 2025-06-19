@@ -1,0 +1,60 @@
+---
+name: Lint code
+
+on:
+  push:
+    branches-ignore: [main, master]
+  pull_request:
+    branches-ignore: [main, master]
+
+jobs:
+  build:
+    name: Lint Code Base
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: true
+
+      - name: Check source code files for Unicode and CRLF
+        run: |
+          set -e
+          find . -name 'distiller' -prune -o -type f -size +0c -regex '.*\.\(py\|yaml\|yml\|txt\|h\|c\|sh\)' -print0 | xargs -0 file | grep -P '^(?!.*ASCII)|CRLF' || exit 0
+          exit 1
+
+      - name: Check shell scripts for x-bit
+        run: |
+          set -e
+          find . -name 'distiller' -prune -o -type f -name \*.sh \! -perm -1 -print0 | xargs -0 grep . || exit 0
+          exit 1
+
+      - name: Lint code
+        uses: super-linter/super-linter/slim@v5
+        env:
+          VALIDATE_ALL_CODEBASE: true
+          DEFAULT_BRANCH: develop
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ANSIBLE: false
+          VALIDATE_EDITORCONFIG: false
+          VALIDATE_PYTHON_BLACK: false
+          VALIDATE_JSCPD: false
+          VALIDATE_CPP: false
+          VALIDATE_NATURAL_LANGUAGE: false
+          VALIDATE_CLANG_FORMAT: false
+          VALIDATE_GITHUB_ACTIONS: false
+          FILTER_REGEX_EXCLUDE: (attic/.*|datasets/face_id/.*\.md|\.github/workflows/.*\.yml)
+
+      - name: Install codespell
+        run: pip install codespell tomli
+
+      - name: Run codespell
+        run: codespell
+
+      # - name: Install markdown-lint-check
+      #   run: npm install -g markdown-link-check
+
+      # - name: Run markdown-lint-check
+      #   run: find . -name \*.md -print0 | xargs -0 -n1 markdown-link-check -a 0 -p -v -r

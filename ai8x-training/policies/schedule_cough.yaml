@@ -1,0 +1,13 @@
+---
+lr_schedulers:
+  training_lr:
+    class: MultiStepLR
+    milestones: [40, 50, 70, 80, 100]
+    gamma: 0.6
+
+policies:
+  - lr_scheduler:
+      instance_name: training_lr
+    starting_epoch: 0
+    ending_epoch: 100
+    frequency: 1
