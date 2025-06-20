@@ -1,0 +1,29 @@
+/Users/mohamedhabibbenabda/MaximSDK/Examples/MAX78000/CNN/kws20_demo/build/Fat32Driver/max9867.o: \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/MiscDrivers/CODEC/max9867.c \
+ /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h \
+ /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/arm-none-eabi/include/stdint.h \
+ /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/arm-none-eabi/include/machine/_default_types.h \
+ /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/arm-none-eabi/include/sys/features.h \
+ /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/arm-none-eabi/include/_newlib_version.h \
+ /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/arm-none-eabi/include/sys/_intsup.h \
+ /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/PeriphDrivers/Include/MAX78000/i2c.h \
+ /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/14.2.1/include/stdbool.h \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/PeriphDrivers/Include/MAX78000/mxc_sys.h \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/PeriphDrivers/Include/MAX78000/mxc_device.h \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/CMSIS/Device/Maxim/MAX78000/Include/max78000.h \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/CMSIS/Include/core_cm4.h \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/CMSIS/Include/core_cmInstr.h \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/CMSIS/Include/core_cmFunc.h \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/CMSIS/Include/core_cm4_simd.h \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/CMSIS/Device/Maxim/MAX78000/Include/system_max78000.h \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/CMSIS/Device/Maxim/MAX78000/Include/gcr_regs.h \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/PeriphDrivers/Include/MAX78000/mxc_errors.h \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/PeriphDrivers/Include/MAX78000/mxc_pins.h \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/PeriphDrivers/Include/MAX78000/gpio.h \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/CMSIS/Device/Maxim/MAX78000/Include/gpio_regs.h \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/CMSIS/Device/Maxim/MAX78000/Include/lpgcr_regs.h \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/CMSIS/Device/Maxim/MAX78000/Include/gcr_regs.h \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/CMSIS/Device/Maxim/MAX78000/Include/i2c_regs.h \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/CMSIS/Device/Maxim/MAX78000/Include/dma_regs.h \
+ /Users/mohamedhabibbenabda/MaximSDK/Libraries/MiscDrivers/CODEC/max9867.h
